@@ -2,23 +2,28 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 
+
+// TODO: Create an array of questions for user input
+const questions = ["Please enter the title of your project.", "Provide a description of your project.", "Installation: How do you install your application?", "Instructions", "Usage: Provide examples of the application being used.", "Contribution Guidelines", "Testing instructions"];
+
 inquirer
     .prompt([
        {type: 'input', message: "Please write the name of your file", name: "file"},
        {type: 'list', message: "What file format do you want for your readme?", name: "fileType", choices: [".txt", ".md"]},
-       {type: 'input', message: questions[0], name: ""},
-       {type: 'input', message: questions[1], name: ""},
-       {type: 'input', message: questions[2], name: ""},
-       {type: 'input', message: questions[3], name: ""},
-       {type: 'input', message: questions[4], name: ""},
-       {type: 'input', message: questions[5], name: ""},
-       {type: 'input', message: questions[6], name: ""}
+       {type: 'input', message: questions[0], name: "0"},
+       {type: 'input', message: questions[1], name: "1"},
+       {type: 'input', message: questions[2], name: "2"},
+       {type: 'input', message: questions[3], name: "3"},
+       {type: 'input', message: questions[4], name: "4"},
+       {type: 'input', message: questions[5], name: "5"},
+       {type: 'input', message: questions[6], name: "6"}
 
     ])
     .then((answers) => {
-        console.log("heyyyyy", answers.file)
-        writeToFile(answers.file, "test")
-        // writeToFile()
+        
+        writeToFile(`${answers.file}${answers.fileType}`, "test")
+        
+       
     })
     .catch((error) => {
         if (error.isTtyError) {
@@ -28,8 +33,7 @@ inquirer
         }
     });
 
-// TODO: Create an array of questions for user input
-const questions = ["Please enter the title of your project.", "Provide a description of your project.", "Installation: How do you install your application?", "Instructions", "Usage: Provide examples of the application being used.", "Contribution Guidelines", "Testing instructions"];
+
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
