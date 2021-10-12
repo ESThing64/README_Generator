@@ -8,22 +8,32 @@ const questions = ["Please enter the title of your project.", "Provide a descrip
 
 inquirer
     .prompt([
-       {type: 'input', message: "Please write the name of your file", name: "file"},
-       {type: 'list', message: "What file format do you want for your readme?", name: "fileType", choices: [".txt", ".md"]},
-       {type: 'input', message: questions[0], name: "0"},
-       {type: 'input', message: questions[1], name: "1"},
-       {type: 'input', message: questions[2], name: "2"},
-       {type: 'input', message: questions[3], name: "3"},
-       {type: 'input', message: questions[4], name: "4"},
-       {type: 'input', message: questions[5], name: "5"},
-       {type: 'input', message: questions[6], name: "6"}
+        { type: 'input', message: "Please write the name of your file", name: "file" },
+        { type: 'list', message: "What file format do you want for your readme?", name: "fileType", choices: [".txt", ".md"] },
+        { type: 'input', message: questions[0], name: "project" },
+        { type: 'input', message: questions[1], name: "description" }
+        // { type: 'input', message: questions[2], name: "2" },
+        // { type: 'input', message: questions[3], name: "3" },
+        // { type: 'input', message: questions[4], name: "4" },
+        // { type: 'input', message: questions[5], name: "5" },
+        // { type: 'input', message: questions[6], name: "6" }
 
     ])
     .then((answers) => {
-        
-        writeToFile(`${answers.file}${answers.fileType}`, "test")
-        
-       
+
+        writeToFile(`${answers.file}${answers.fileType}`, "")
+
+        fs.appendFile(`${answers.file}${answers.fileType}`,
+         `## ${answers.project}\n ## Description\n ${answers.description}\n 
+         `, () =>
+            console.log("I think it worked")
+        );
+
+
+
+
+
+
     })
     .catch((error) => {
         if (error.isTtyError) {
