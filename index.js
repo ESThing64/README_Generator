@@ -1,33 +1,81 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
+//add genmarkdown
 
 
 // TODO: Create an array of questions for user input
-const questions = ["Please enter the title of your project.", "Provide a description of your project.", "Installation: How do you install your application?", "Instructions", "Usage: Provide examples of the application being used.", "Contribution Guidelines", "Testing instructions"];
+const questions = [
+    {
+        type: 'input',
+        message: "Please enter the file name of your read-me.",
+        name: "file"
+    },
+
+    {
+        type: 'list',
+        message: "What file format do you want for your readme?",
+        name: "fileType",
+        choices: [".txt", ".md"]
+    },
+
+    {
+        type: 'input',
+        message: "Whats the title of your project?",
+        name: "project"
+    },
+
+  
+
+    {
+        type: 'input',
+        message: "Provide a description of your project.",
+        name: "description"
+    },
+
+    {
+        type: 'input',
+        message: "Installation: How do you install your application?",
+        name: "installation"
+    },
+
+    {
+        type: 'input',
+        message: "Instructions",
+        name: "instructions"
+    },
+
+    {
+        type: 'input',
+        message: "Usage: Provide examples of the application being used.",
+        name: "usage"
+    },
+
+    {
+        type: 'input',
+        message: "Contribution Guidelines",
+        name: "contribution"
+    },
+
+    {
+        type: 'input',
+        message: "Testing instructions",
+        name: "testing"
+    }
+
+];
 
 inquirer
-    .prompt([
-        { type: 'input', message: "Please write the name of your file", name: "file" },
-        { type: 'list', message: "What file format do you want for your readme?", name: "fileType", choices: [".txt", ".md"] },
-        { type: 'input', message: questions[0], name: "project" },
-        { type: 'input', message: questions[1], name: "description" }
-        // { type: 'input', message: questions[2], name: "2" },
-        // { type: 'input', message: questions[3], name: "3" },
-        // { type: 'input', message: questions[4], name: "4" },
-        // { type: 'input', message: questions[5], name: "5" },
-        // { type: 'input', message: questions[6], name: "6" }
+    .prompt(questions)
+    .then((answers) => { generateMarkdown(answers)
 
-    ])
-    .then((answers) => {
+        // writeToFile(`${answers.file}${answers.fileType}`, "")
 
-        writeToFile(`${answers.file}${answers.fileType}`, "")
-
-        fs.appendFile(`${answers.file}${answers.fileType}`,
-         `## ${answers.project}\n ## Description\n ${answers.description}\n 
-         `, () =>
-            console.log("I think it worked")
-        );
+        // fs.appendFile(`${answers.file}${answers.fileType}`,
+        //     `# ${answers.project}\n ## Description\n ${answers.description}\n 
+        //  `, () =>
+        //     console.log("I think it worked")
+        // );
 
 
 
@@ -74,3 +122,6 @@ init();
 // I need to start a promt. Should I have it ask the name of the readme? I think yes
 
 //Then need it to save had variblename.md
+
+
+// 

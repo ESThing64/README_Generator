@@ -1,7 +1,7 @@
 {
   "name": "static-site",
   "version": "1.0.0",
-  "description": "",
+  "description": "test",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -10,5 +10,15 @@
   "license": "ISC",
   "dependencies": {
     "inquirer": "^8.2.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ESThing64/README_Generator.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/ESThing64/README_Generator/issues"
+  },
+  "homepage": "https://github.com/ESThing64/README_Generator#readme"
 }
