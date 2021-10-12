@@ -15,22 +15,15 @@ function generateMarkdown(answers) {
   // console.log("from GENMd",answers)
   console.log(answers.project)
   return `# ${answers.project}
-  ## Description\n ${answers.description}\n
-
-
-
-  
-
+## Description\n ${answers.description}\n
+## Installation Instructions\n ${answers.installation}
+## Instructions\n ${answers.instructions}
+## Usage\n ${answers.usage}
+## Contribution\n ${answers.contribution}
+## Testing\n ${answers.testing}
 `;
 }
 
 module.exports = generateMarkdown;
 
 
-// writeToFile(`${answers.file}${answers.fileType}`, "")
-
-// fs.appendFile(`${answers.file}${answers.fileType}`,
-//     `# ${answers.project}\n ## Description\n ${answers.description}\n 
-//  `, () =>
-//     console.log("I think it worked")
-// );

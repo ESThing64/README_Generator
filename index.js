@@ -68,27 +68,7 @@ const questions = [
 
 inquirer
     .prompt(questions)
-    .then((answers) => {
-        // generateMarkdown(answers)
-
-        // console.log(generateMarkdown(answers))
-
-        writeToFile(`${answers.file}${answers.fileType}`, generateMarkdown(answers))
-
-        // writeToFile(`${answers.file}${answers.fileType}`, "")
-
-        // fs.appendFile(`${answers.file}${answers.fileType}`,
-        //     `# ${answers.project}\n ## Description\n ${answers.description}\n 
-        //  `, () =>
-        //     console.log("I think it worked")
-        // );
-
-
-
-
-
-
-    })
+    .then((answers) =>  writeToFile(`${answers.file}${answers.fileType}`, generateMarkdown(answers)))
     .catch((error) => {
         if (error.isTtyError) {
             // Prompt couldn't be rendered in the current environment
@@ -118,16 +98,3 @@ function init() { }
 init();
 
 
-//This will make a new file. Its called mynewfile3.txt and the content inside is "Hello content"
-// fs.writeFile('mynewfile3.txt', 'Hello content!', function (err) {
-//     if (err) throw err;
-//     console.log('Saved!');
-//   });
-
-
-// I need to start a promt. Should I have it ask the name of the readme? I think yes
-
-//Then need it to save had variblename.md
-
-
-// 
