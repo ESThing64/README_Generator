@@ -11,10 +11,26 @@ function renderLicenseLink(license) {}
 function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
+function generateMarkdown(answers) {
+  // console.log("from GENMd",answers)
+  console.log(answers.project)
+  return `# ${answers.project}
+  ## Description\n ${answers.description}\n
+
+
+
+  
 
 `;
 }
 
 module.exports = generateMarkdown;
+
+
+// writeToFile(`${answers.file}${answers.fileType}`, "")
+
+// fs.appendFile(`${answers.file}${answers.fileType}`,
+//     `# ${answers.project}\n ## Description\n ${answers.description}\n 
+//  `, () =>
+//     console.log("I think it worked")
+// );

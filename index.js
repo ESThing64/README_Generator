@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 //add genmarkdown
 
 
@@ -25,7 +26,7 @@ const questions = [
         name: "project"
     },
 
-  
+
 
     {
         type: 'input',
@@ -67,7 +68,12 @@ const questions = [
 
 inquirer
     .prompt(questions)
-    .then((answers) => { generateMarkdown(answers)
+    .then((answers) => {
+        // generateMarkdown(answers)
+
+        // console.log(generateMarkdown(answers))
+
+        writeToFile(`${answers.file}${answers.fileType}`, generateMarkdown(answers))
 
         // writeToFile(`${answers.file}${answers.fileType}`, "")
 
