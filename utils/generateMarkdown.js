@@ -22,7 +22,9 @@ function generateMarkdown(answers) {
 
 
 ## Table of Contents
-* [Installation]
+* [Description]
+* [Installation Instructions]
+* [Instructions]
 * [Usage]
 * [Contribution]
 * [Testing]
