@@ -48,7 +48,7 @@ const questions = [
 
     {
         type: 'input',
-        message: "Usage: Provide examples of the application being used.",
+        message: "Usage",
         name: "usage"
     },
 
@@ -62,6 +62,14 @@ const questions = [
         type: 'input',
         message: "Testing instructions",
         name: "testing"
+    },
+
+    {
+        type: 'list',
+        message: "Select your License",
+        name: "license",
+        choices: ["MIT", "MPL 2.0", "GPL v2", "none"]
+
     }
 
 ];
