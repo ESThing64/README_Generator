@@ -22,16 +22,16 @@ function generateMarkdown(answers) {
 
 
 ## Table of Contents
-* [Description]
-* [Installation Instructions]
-* [Instructions]
-* [Usage]
-* [Contribution]
-* [Testing]
+* [Description](#Description)
+* [Installation-Instructions](#Installation-Instructions)
+* [Instructions](#Instructions)
+* [Usage](#Usage)
+* [Contribution](#Contribution)
+* [Testing](#Testing)
 
 
 ## Description\n ${answers.description}\n
-## Installation Instructions\n ${answers.installation}
+## Installation-Instructions\n ${answers.installation}
 ## Instructions\n ${answers.instructions}
 ## Usage\n ${answers.usage}
 ## Contribution\n ${answers.contribution}
